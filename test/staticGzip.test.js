@@ -1,3 +1,18 @@
+/*jslint node: true, bitwise: true, unparam: true, maxerr: 50, white: true, stupid: true */
+"use strict";
+
+/*!
+ * crafity-gzip - gzip compressor for node
+ * Copyright(c) 2013 Crafity
+ * Copyright(c) 2013 Bart Riemens
+ * Copyright(c) 2013 Galina Slavova
+ * MIT Licensed
+ */
+
+/**
+ * Test dependencies.
+ */
+
 var connect = require('connect'),
     fs = require('fs'),
     helpers = require('./helpers'),
@@ -93,4 +108,4 @@ module.exports = {
   'staticGzip test uncompressable without Accept-Encoding: maxAge': testMaxAge(
     staticMaxAge, gifPath, {}, 1234000
   )
-}
+};

@@ -1,4 +1,4 @@
-# connect-gzip
+# connect-gzip [![Dependency status](https://david-dm.org/crafity/crafity-gzip.png)](https://david-dm.org/crafity/crafity-gzip) [![Travis Build Status](https://travis-ci.org/Crafity/crafity-gzip.png?branch=master)](https://travis-ci.org/Crafity/crafity-gzip) [![NPM Module version](https://badge.fury.io/js/crafity-gzip.png)](http://badge.fury.io/js/crafity-gzip)
 
 Gzip middleware for [Connect](http://senchalabs.github.com/connect/) on [Node.js](http://nodejs.org). Uses Unix [`gzip`](http://www.freebsd.org/cgi/man.cgi?query=gzip) command to perform compression of dynamic requests or static files. Originally based on implementation included with Connect before version 1.0.
 

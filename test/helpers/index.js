@@ -1,3 +1,16 @@
+/*jslint node: true, bitwise: true, unparam: true, maxerr: 50, white: true, stupid: true */
+"use strict";
+
+/*!
+ * Ext JS Connect
+ * Copyright(c) 2010 Sencha Inc.
+ * MIT Licensed
+ */
+
+/**
+ * Test dependencies.
+ */
+
 var assert = require('assert'),
     should = require('should'),
     spawn = require('child_process').spawn;
@@ -6,19 +19,35 @@ function wrapTest(func, numCallbacks) {
   numCallbacks = numCallbacks || 1;
   return function(beforeExit) {
     var n = 0;
-    function done() { n++; }
+    function done() { n += 1; }
     func(done);
     beforeExit(function() {
       n.should.equal(numCallbacks);
     });
-  }
+  };
+}
+
+function gunzip(data, callback) {
+  var process = spawn('gunzip', ['-c']),
+      out = '',
+      err = '';
+  process.stdout.on('data', function(data) {
+    out += data;
+  });
+  process.stderr.on('data', function(data) {
+    err += data;
+  });
+  process.on('exit', function(code) {
+    if (callback) { callback(err, out); }
+  });
+  process.stdin.end(data, 'binary');
 }
 
 exports.testUncompressed = function(app, url, headers, resBody, resType, method) {
   return wrapTest(function(done) {
     assert.response(app, {
         url: url,
-        method: method ? method : 'GET',
+        method: method || 'GET',
         headers: headers
       }, {
         status: 200,
@@ -30,13 +59,13 @@ exports.testUncompressed = function(app, url, headers, resBody, resType, method)
       }
     );
   });
-}
+};
 
 exports.testCompressed = function(app, url, headers, resBody, resType, method) {
   return wrapTest(function(done) {
     assert.response(app, {
         url: url,
-        method: method ? method : 'GET',
+        method: method || 'GET',
         headers: headers,
         encoding: 'binary'
       }, {
@@ -55,7 +84,7 @@ exports.testCompressed = function(app, url, headers, resBody, resType, method) {
       }
     );
   });
-}
+};
 
 exports.testRedirect = function(app, url, headers, location) {
   return wrapTest(function(done) {
@@ -70,7 +99,7 @@ exports.testRedirect = function(app, url, headers, location) {
       }, done
     );
   });
-}
+};
 
 exports.testMaxAge = function(app, url, headers, maxAge) {
   return wrapTest(function(done) {
@@ -85,20 +114,5 @@ exports.testMaxAge = function(app, url, headers, maxAge) {
       }, done
     );
   });
-}
+};
 
-function gunzip(data, callback) {
-  var process = spawn('gunzip', ['-c']),
-      out = '',
-      err = '';
-  process.stdout.on('data', function(data) {
-    out += data;
-  });
-  process.stderr.on('data', function(data) {
-    err += data;
-  });
-  process.on('exit', function(code) {
-    if (callback) callback(err, out);
-  });
-  process.stdin.end(data, 'binary');
-}
