@@ -1,4 +1,4 @@
-# connect-gzip [![Dependency status](https://david-dm.org/crafity/crafity-gzip.png)](https://david-dm.org/crafity/crafity-gzip) [![Travis Build Status](https://travis-ci.org/Crafity/crafity-gzip.png?branch=master)](https://travis-ci.org/Crafity/crafity-gzip) [![NPM Module version](https://badge.fury.io/js/crafity-gzip.png)](http://badge.fury.io/js/crafity-gzip)
+# crafity-gzip [![Dependency status](https://david-dm.org/crafity/crafity-gzip.png)](https://david-dm.org/crafity/crafity-gzip) [![Travis Build Status](https://travis-ci.org/Crafity/crafity-gzip.png?branch=master)](https://travis-ci.org/Crafity/crafity-gzip) [![NPM Module version](https://badge.fury.io/js/crafity-gzip.png)](http://badge.fury.io/js/crafity-gzip)
 
 Gzip middleware for [Connect](http://senchalabs.github.com/connect/) on [Node.js](http://nodejs.org). Uses Unix [`gzip`](http://www.freebsd.org/cgi/man.cgi?query=gzip) command to perform compression of dynamic requests or static files. Originally based on implementation included with Connect before version 1.0.
 
@@ -7,7 +7,7 @@ Gzip middleware for [Connect](http://senchalabs.github.com/connect/) on [Node.js
 
 Install via npm:
 
-    $ npm install connect-gzip
+    $ npm install crafity-gzip
 
 
 ## Usage
@@ -17,7 +17,7 @@ Install via npm:
 Include this middleware to dynamically gzip data sent via `res.write` or `res.end` based on the Content-Type header.
 
     var connect = require('connect'),
-        gzip = require('connect-gzip');
+        gzip = require('crafity-gzip');
     
     connect.createServer(
       gzip.gzip(),
@@ -48,7 +48,7 @@ Gzips files in a root directory, and then serves them using the default [`connec
 If a file under the root path (such as an image) does not have an appropriate MIME type for compression, it will still be passed through to `connect.static` and served uncompressed. Thus, you can simply use `gzip.staticGzip` in place of `connect.static`.
 
     var connect = require('connect'),
-        gzip = require('connect-gzip');
+        gzip = require('crafity-gzip');
     
     connect.createServer(
       gzip.staticGzip(__dirname + '/public')
@@ -80,7 +80,9 @@ Run the tests with
 
 (The MIT License)
 
-Copyright (c) 2011 Nate Smith &lt;nate@nateps.com&gt;
+Copyright (c) 2010-2013 Bart Riemens <briemens@crafity.com>
+Copyright (c) 2010-2013 Galina Slavova <galina@crafity.com>
+Copyright (c) 2010-2013 Crafity <info@crafity.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
