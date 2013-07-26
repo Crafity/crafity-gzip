@@ -14,3 +14,4 @@
 exports.gzip = require('./lib/gzip');
 exports.staticGzip = require('./lib/staticGzip');
 exports.fullname = "crafity-gzip";
+exports.version = "0.1.1";

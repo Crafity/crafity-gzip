@@ -1,7 +1,7 @@
 {
   "name": "crafity-gzip",
   "description": "Gzip middleware for Connect. Forked from connect-gzip and based on implementation in Connect 0.5.9. Original source: https://github.com/senchalabs/connect/tree/c9a0c1e0e98451bb5fffb70c622b827a11bf4fc7",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Galina Slavova <galina@crafity.com> and Bart Riemens <briemens@crafity.com>",
   "homepage": "https://github.com/Crafity/crafity-gzip#readme",
   "keywords": [ "crafity", "gzip" ],
