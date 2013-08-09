@@ -1,62 +1,62 @@
 {
-  "name": "crafity-gzip",
-  "description": "Gzip middleware for Connect. Forked from connect-gzip and based on implementation in Connect 0.5.9. Original source: https://github.com/senchalabs/connect/tree/c9a0c1e0e98451bb5fffb70c622b827a11bf4fc7",
-  "version": "0.1.1",
-  "author": "Galina Slavova <galina@crafity.com> and Bart Riemens <briemens@crafity.com>",
-  "homepage": "https://github.com/Crafity/crafity-gzip#readme",
-  "keywords": [ "crafity", "gzip" ],
-  "maintainers": [
-    {
-      "name": "Bart Riemens",
-      "email": "briemens@crafity.com",
-      "web": "http://crafity.com/about/bart"
-    },
-    {
-      "name": "Galina Slavova",
-      "email": "galina@crafity.com",
-      "web": "http://crafity.com/about/galina"
-    }
-  ],
-  "contributors": [
-    {
-      "name": "Bart Riemens",
-      "email": "briemens@crafity.com",
-      "web": "http://crafity.com/about/bart"
-    },
-    {
-      "name": "Galina Slavova",
-      "email": "galina@crafity.com",
-      "web": "http://crafity.com/about/galina"
-    }
-  ],
-  "main": "./index.js",
-  "licenses": [
-    {
-      "type": "The MIT License",
-      "url": "https://github.com/Crafity/crafity-gzip/blob/master/LICENSE"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/Crafity/crafity-gzip/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/crafity/crafity-gzip"
-  },
-  "dependencies": {
-    "connect": ">=1 <2",
-    "mime": ">=0.0.1",
-    "crafity-jstest": "~0.1.0"
-  },
-  "devDependencies": {
-    "expresso": ">=0.9",
-    "should": ">=0.3.1"
-  },
-  "engines": {
-    "node": "*"
-  },
-  "scripts": {
-    "prepublish": "npm prune",
-    "test": "scripts/npm-test.sh"
-  }
+	"name": "crafity-gzip",
+	"description": "Gzip middleware for Connect. Forked from connect-gzip and based on implementation in Connect 0.5.9. Original source: https://github.com/senchalabs/connect/tree/c9a0c1e0e98451bb5fffb70c622b827a11bf4fc7",
+	"version": "0.1.1",
+	"author": "Galina Slavova <galina@crafity.com> and Bart Riemens <briemens@crafity.com>",
+	"homepage": "https://github.com/Crafity/crafity-gzip#readme",
+	"keywords": [ "crafity", "gzip" ],
+	"maintainers": [
+		{
+			"name": "Bart Riemens",
+			"email": "briemens@crafity.com",
+			"web": "http://crafity.com/about/bart"
+		},
+		{
+			"name": "Galina Slavova",
+			"email": "galina@crafity.com",
+			"web": "http://crafity.com/about/galina"
+		}
+	],
+	"contributors": [
+		{
+			"name": "Bart Riemens",
+			"email": "briemens@crafity.com",
+			"web": "http://crafity.com/about/bart"
+		},
+		{
+			"name": "Galina Slavova",
+			"email": "galina@crafity.com",
+			"web": "http://crafity.com/about/galina"
+		}
+	],
+	"main": "./index.js",
+	"licenses": [
+		{
+			"type": "The MIT License",
+			"url": "https://github.com/Crafity/crafity-gzip/blob/master/LICENSE"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/Crafity/crafity-gzip/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/crafity/crafity-gzip"
+	},
+	"dependencies": {
+		"connect": ">=1 <2",
+		"mime": ">=0.0.1",
+		"crafity-jstest": "~0.1.0"
+	},
+	"devDependencies": {
+		"expresso": ">=0.9",
+		"should": ">=0.3.1"
+	},
+	"engines": {
+		"node": "*"
+	},
+	"scripts": {
+		"prepublish": "npm prune",
+		"test": "scripts/npm-test.sh"
+	}
 }
